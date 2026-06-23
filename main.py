@@ -31,6 +31,7 @@ while True:
         for r in lista_receitas:
             # Usamos as chaves do dicionário para imprimir bonitinho
             print(f"Data: {r['data']} | {r['descricao']}: R$ {r['valor']:.2f} ({r['categoria']})")
+        print("-"*40)
 
         print("\n--- DESPESAS ---")
         if not lista_despesas:
