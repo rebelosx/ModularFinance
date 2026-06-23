@@ -1,12 +1,20 @@
 {
     "receitas": [
         {
-            "Descrição": "1500",
-            "Valor": 1540.0,
-            "Data": "15",
-            "Categoria": "renda",
-            "Status": "recebido"
+            "descricao": "salario",
+            "valor": 1598.0,
+            "data": "15012008",
+            "categoria": "renda",
+            "status": "recebido"
         }
     ],
-    "despesas": []
+    "despesas": [
+        {
+            "descricao": "cartao",
+            "valor": 159.0,
+            "data": "15012008",
+            "categoria": "tech",
+            "status": "pago"
+        }
+    ]
 }

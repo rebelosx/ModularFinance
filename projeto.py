@@ -11,7 +11,7 @@ def adicionar_receita():
     nome = input("Digite a descricao (ex: Salario): ")
     while True:
         try:
-            valor = float(input("Valor: R$ "))
+            valor = float(input("Valor: R$"))
             break 
         except ValueError:
             print("❌ Erro: Digite apenas números (use ponto para centavos)!")
@@ -21,11 +21,11 @@ def adicionar_receita():
     status = input("Status (Recebido/Pendente): ")
     #3 Cria o "Pacote de dados (dicionario)"
     nova_receita = {
-        "Descrição": nome, 
-        "Valor": valor,
-        "Data": data,
-        "Categoria": categoria,
-        "Status": status
+        "descricao": nome, 
+        "valor": valor,
+        "data": data,
+        "categoria": categoria,
+        "status": status
         }
 
     #4 Guarda o pacote na lista
@@ -51,11 +51,11 @@ def adicionar_despesa():
     status = input("Status (Pago/Pendente): ")
 
     nova_despesa = {
-        "Descrição": nome, 
-        "Valor": valor,
-        "Data": data,
-        "Categoria": categoria,
-        "Status": status
+        "descricao": nome, 
+        "valor": valor,
+        "data": data,
+        "categoria": categoria,
+        "status": status
         }
 
     lista_despesas.append(nova_despesa)
@@ -63,8 +63,8 @@ def adicionar_despesa():
     print(f"Receita'{nome}' guardada com sucesso!")
 
 def exibir_geral():
-    total_receitas = sum(r["Valor R$"] for r in lista_receitas)
-    total_despesas = sum(d["Valor R$"] for d in lista_despesas)
+    total_receitas = sum(r["valor"] for r in lista_receitas)
+    total_despesas = sum(d["valor"] for d in lista_despesas)
     saldo = total_receitas - total_despesas
     
     print("\n=== BALANÇO GERAL ===")
@@ -90,43 +90,60 @@ def salvar_dados():#funcao para salvar os dados dos clientes.
         json.dump(dados, arquivo, indent=4, ensure_ascii=False)
     print("\n💾 Dados salvos com sucesso no arquivo!")
 
+def limpar_dados():#funcao para limpar os dados salvos, vai sobrescrever o arquivo antigo, com um limpo por cima.
+    confirmacao = input("⚠️ Tem certeza que deseja apagar TUDO? (s/n): ").lower()
+    if confirmacao == 's':
+        lista_receitas.clear()
+        lista_despesas.clear()
+        salvar_dados() # Isso sobrescreve o arquivo com as listas vazias
+        print("\n🧹 Sistema resetado com sucesso!")
+    else:
+        print("\nAção cancelada.")
+
 carregar_dados() #carrega os dados, já salvos!
 
 #loop do menu
 while True:
-
-    print("\n--- SISTEMA FINANCEIRO ---")
+    print("\n" + "="*30)
+    print("   SISTEMA DE GESTÃO FINANCEIRA")
+    print("="*30)
     print("1 - Adicionar Receita")
-    print("2 - Ver todas as Receitas")
-    print("3 - Adicionar Despesas")
-    print("4 - Ver todas as Despesas")
-    print("5 - Ver o GERAL")
-    print("sair - Encerrar programa")
+    print("2 - Adicionar Despesa")
+    print("3 - Ver Extrato Detalhado")
+    print("4 - Ver Balanço Geral (Dashboard)")
+    print("5 - LIMPAR TODOS OS DADOS")
+    print("sair - Encerrar")
     
     opcao = input("\nEscolha uma opção: ")
 
     if opcao == "1":
-        adicionar_receita() # Aqui chamamos a função!
-    
+        adicionar_receita()
     elif opcao == "2":
-        print("\nLista de Receitas:")
-        for r in lista_receitas:
-            print(f"Descrição: {r['Descrição']} | Valor: R${r['Valor R$']:.2f}") # Mostra o que tem na lista
-        
-    elif opcao == "3":
         adicionar_despesa()
+    elif opcao == "3":
+        print("\n" + "-"*40)
+        print("         EXTRATO DETALHADO")
+        print("-"*40)
+        
+        print("\n--- RECEITAS ---")
+        if not lista_receitas:
+            print("Nenhuma receita cadastrada.")
+        for r in lista_receitas:
+            # Usamos as chaves do dicionário para imprimir bonitinho
+            print(f"Data: {r['data']} | {r['descricao']}: R$ {r['valor']:.2f} ({r['categoria']})")
 
+        print("\n--- DESPESAS ---")
+        if not lista_despesas:
+            print("Nenhuma despesa cadastrada.")
+        for d in lista_despesas:
+            print(f"Data: {d['data']} | {d['descricao']}: R$ {d['valor']:.2f} ({d['categoria']})")
+        print("-"*40)
     elif opcao == "4":
-        print("\nLista de Despesas")
-        for r in lista_despesas:
-            print(f"Descrição: {r['Descrição']} | Valor: R${r['Valor R$']:.2f}")
-
-    elif opcao == "5":
         exibir_geral()
-
+    elif opcao == "5":
+        limpar_dados() # Chama funcao de reset
     elif opcao == "sair":
-        print("Programa encerrado.")
-        break # Sai do loop
-    
+        print("Saindo do sistema. Até logo!")
+        break
     else:
-        print("Opção inválida, tente novamente.")
+        print("Opção inválida!")
