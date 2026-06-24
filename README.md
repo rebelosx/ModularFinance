@@ -31,17 +31,17 @@ O código segue padrões profissionais de **modularização**:
 ## 📸 Demonstração do Terminal
 
 ### 1. Menu Principal
-![Menu Principal](menu.png)
+![Menu Principal](img/menu.png)
 
 ---
 
 ### 2. Exibição de Extrato Detalhado
-![Exibição de Extrato](extrato.png)
+![Exibição de Extrato](img/extrato.png)
 
 ---
 
 ### 3. Alerta de Limite Ultrapassado
-![Alerta de Limite Ultrapassado](limite.png)
+![Alerta de Limite Ultrapassado](img/limite.png)
 
 ---
 
