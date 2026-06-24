@@ -1,8 +1,8 @@
-# 💰 Sistema de Gestão Financeira Modular (Python)
+#  PyFinance: Gestão Financeira Modular (Python)
 
 Este é um protótipo funcional de um software para gerenciamento de finanças pessoais, desenvolvido como projeto acadêmico no **Eniac**. O objetivo principal foi criar uma aplicação de back-end robusta, utilizando persistência de dados, tratamento de erros e uma arquitetura modular.
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 *   **Controle de Transações:** Cadastro detalhado de receitas e despesas com descrição, valor, data, categoria e status.
 *   **Dashboard em Tempo Real:** Cálculo automático de saldo total, somatório de receitas e somatório de despesas [Conversa Anterior].
@@ -11,13 +11,13 @@ Este é um protótipo funcional de um software para gerenciamento de finanças p
 *   **Validação de Entradas:** Uso de blocos `try-except` para garantir que o sistema não trave caso o usuário digite valores inválidos (como letras em campos de valor) [Conversa Anterior, 1809].
 *   **Extrato Formatado:** Visualização organizada das movimentações com separadores visuais para melhor experiência do usuário (UX) [Conversa Anterior].
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 *   **Python 3.x**
 *   **JSON** (Estrutura de banco de dados local)
 *   **Git/GitHub** (Versionamento e colaboração)
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 O código segue padrões profissionais de **modularização**:
 
@@ -28,7 +28,7 @@ O código segue padrões profissionais de **modularização**:
 
 ---
 
-## 📸 Demonstração do Terminal
+##  Demonstração do Terminal
 
 ### 1. Menu Principal
 ![Menu Principal](img/menu.png)
@@ -55,7 +55,7 @@ Como responsável pela **lógica central e back-end**, minhas principais contrib
 4.  **Lógica de Monitoramento:** Desenvolvi a função de alerta de limites, cruzando dados de despesas com o orçamento definido pelo usuário.
 5.  **Governança de Código:** Gerenciei o repositório via Git, garantindo um histórico de commits organizado e um ambiente de desenvolvimento limpo.
 
-## 💻 Como executar o projeto
+##  Como executar o projeto
 
 1. **Clone o repositório:**
    ```bash
