@@ -15,9 +15,17 @@
             "data": "15/01/2008",
             "categoria": "lazer",
             "status": "pago"
+        },
+        {
+            "descricao": "compra",
+            "valor": 601.0,
+            "data": "15/01/2008",
+            "categoria": "lazer",
+            "status": "pago"
         }
     ],
     "limites": {
-        "lazer": 600.0
+        "lazer": 600.0,
+        "0": 0.0
     }
 }
