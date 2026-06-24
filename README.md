@@ -1,4 +1,4 @@
-#  PyFinance: Gestão Financeira Modular (Python)
+#  ModularFinance: Gestão Financeira Modular (Python)
 
 Este é um protótipo funcional de um software para gerenciamento de finanças pessoais, desenvolvido como projeto acadêmico no **Eniac**. O objetivo principal foi criar uma aplicação de back-end robusta, utilizando persistência de dados, tratamento de erros e uma arquitetura modular.
 
